@@ -1,0 +1,39 @@
+[{
+  "_id": {
+    "$oid": "689d8deea7b243b69efa8b72"
+  },
+  "firstName": "Chhagan",
+  "lastName": "Kumawat",
+  "mobile": "7232083504",
+  "email": "chhagankumarkumawat1212@gmail.com",
+  "address": "Pune, Maharashtra",
+  "password": "$2b$10$5pdsrx1jbw7avfFby3vXa.JGgnTRrzaEvbv0tNf6rd3ycinFCeYgm",
+  "__v": 0,
+  "avatarUrl": "/uploads/avatars/689d8deea7b243b69efa8b72_1755323040158.png"
+},
+{
+  "_id": {
+    "$oid": "68bab68be362d5a7182adb9a"
+  },
+  "firstName": "ck",
+  "lastName": "kumawat",
+  "mobile": "7733773377",
+  "email": "nk@gmail.com",
+  "address": "Pune",
+  "password": "$2b$10$E13XylT5CIHtFcRY/eB6luk.VDWE/iA5ZffITFn0Wks805iqZnRj6",
+  "avatarUrl": "",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68babac9e362d5a7182adbac"
+  },
+  "firstName": "Narpat",
+  "lastName": "kumawat",
+  "mobile": "1234567890",
+  "email": "nnk@gmail.com",
+  "address": "Pune",
+  "password": "$2b$10$66ZXvgOlHg3eoBCypQGc6uzNoDrKpLIB/en76M9XbF9wZ.I3GvJL6",
+  "avatarUrl": "",
+  "__v": 0
+}]

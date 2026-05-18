@@ -1,0 +1,25 @@
+{
+  "type": "Compass Connections",
+  "version": {
+    "$numberInt": "1"
+  },
+  "connections": [
+    {
+      "id": "019fc226-fbe1-448f-8220-e66cbc352029",
+      "lastUsed": {
+        "$date": {
+          "$numberLong": "1757077323766"
+        }
+      },
+      "favorite": {
+        "name": "Chhagan",
+        "color": "color1"
+      },
+      "savedConnectionType": "favorite",
+      "connectionOptions": {
+        "connectionString": "mongodb://localhost:27017/",
+        "oidc": {}
+      }
+    }
+  ]
+}

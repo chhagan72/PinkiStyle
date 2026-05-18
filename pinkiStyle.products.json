@@ -1,0 +1,472 @@
+[{
+  "_id": {
+    "$oid": "68bab345e362d5a7182adb8b"
+  },
+  "title": "New Trending Men's Jeens",
+  "details": "New Trending Men's Jeens",
+  "categories": [
+    "Jeans"
+  ],
+  "sizes": [
+    {
+      "label": "M",
+      "price": 699,
+      "stock": 4
+    },
+    {
+      "label": "L",
+      "price": 699,
+      "stock": 2
+    },
+    {
+      "label": "XL",
+      "price": 799,
+      "stock": 12
+    }
+  ],
+  "discountPercent": 12,
+  "images": [
+    "/uploads/products/p_1757066053621_b38wjbs019.webp"
+  ],
+  "visible": true,
+  "reviews": [],
+  "createdAt": {
+    "$date": "2025-09-05T09:54:13.653Z"
+  },
+  "updatedAt": {
+    "$date": "2025-09-05T09:54:13.653Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68bac353d7b1198fb88dd92a"
+  },
+  "title": "Sassafras Women's Wide Leg Stretchable Jeans",
+  "details": "Sassafras Women's Wide Leg Stretchable Jeans",
+  "categories": [
+    "LJeans"
+  ],
+  "sizes": [
+    {
+      "label": "M",
+      "price": 765,
+      "stock": 12
+    },
+    {
+      "label": "L",
+      "price": 765,
+      "stock": 12
+    },
+    {
+      "label": "XL",
+      "price": 875,
+      "stock": 12
+    },
+    {
+      "label": "XLL",
+      "price": 875,
+      "stock": 12
+    }
+  ],
+  "discountPercent": 13,
+  "images": [
+    "/uploads/products/p_1757070163770_4de9ytkmoao.webp",
+    "/uploads/products/p_1757070163771_nz51jr1bpee.webp",
+    "/uploads/products/p_1757070163771_yqksnn74vc.webp",
+    "/uploads/products/p_1757070163772_m0gcaxwku6.webp",
+    "/uploads/products/p_1757070163773_xlyi4tvk9h8.webp",
+    "/uploads/products/p_1757070163776_xhopwqsxay.webp",
+    "/uploads/products/p_1757070163782_l7c43xnbzcn.webp"
+  ],
+  "visible": true,
+  "reviews": [],
+  "createdAt": {
+    "$date": "2025-09-05T11:02:43.850Z"
+  },
+  "updatedAt": {
+    "$date": "2025-09-05T11:02:43.850Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68bac869d7b1198fb88dd93b"
+  },
+  "title": "men T-Shirt",
+  "details": "men T-Shirt",
+  "categories": [
+    "Tshirt"
+  ],
+  "sizes": [
+    {
+      "label": "M",
+      "price": 455,
+      "stock": 0
+    },
+    {
+      "label": "L",
+      "price": 566,
+      "stock": 0
+    },
+    {
+      "label": "XL",
+      "price": 566,
+      "stock": 0
+    },
+    {
+      "label": "XLL",
+      "price": 670,
+      "stock": 0
+    }
+  ],
+  "discountPercent": 0,
+  "images": [
+    "/uploads/products/p_1757071465745_n5wnpuhfwv.webp",
+    "/uploads/products/p_1757071465746_xjjmh4ekoxi.webp",
+    "/uploads/products/p_1757071465746_rfavoanwuzm.webp",
+    "/uploads/products/p_1757071465747_kpzrl7c9pth.webp"
+  ],
+  "visible": true,
+  "reviews": [],
+  "createdAt": {
+    "$date": "2025-09-05T11:24:25.756Z"
+  },
+  "updatedAt": {
+    "$date": "2025-09-05T11:24:25.756Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68bac911d7b1198fb88dd93e"
+  },
+  "title": "Anouk Women's Embellished Sequinned Saree",
+  "details": "Anouk Women's Embellished Sequinned Saree",
+  "categories": [
+    "Saree"
+  ],
+  "sizes": [
+    {
+      "label": "M",
+      "price": 1670,
+      "stock": 0
+    },
+    {
+      "label": "L",
+      "price": 1699,
+      "stock": 0
+    },
+    {
+      "label": "XL",
+      "price": 1699,
+      "stock": 0
+    }
+  ],
+  "discountPercent": 0,
+  "images": [
+    "/uploads/products/p_1757071633705_bw0in7cij7l.webp",
+    "/uploads/products/p_1757071633705_oh7gyvfjhxi.webp",
+    "/uploads/products/p_1757071633705_oz11smfpu77.webp",
+    "/uploads/products/p_1757071633707_euj718uhbe.webp",
+    "/uploads/products/p_1757071633707_da6h9vir4zv.webp",
+    "/uploads/products/p_1757071633707_2fnk5nr6pkp.webp",
+    "/uploads/products/p_1757071633709_aggvp6msj0s.webp"
+  ],
+  "visible": true,
+  "reviews": [],
+  "createdAt": {
+    "$date": "2025-09-05T11:27:13.714Z"
+  },
+  "updatedAt": {
+    "$date": "2025-09-05T11:27:27.633Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68bac9a3d7b1198fb88dd94e"
+  },
+  "title": "BEBAAK SIAH BLOUSE",
+  "details": "BEBAAK SIAH BLOUSE",
+  "categories": [
+    "Blouse"
+  ],
+  "sizes": [
+    {
+      "label": "M",
+      "price": 799,
+      "stock": 12
+    },
+    {
+      "label": "L",
+      "price": 859,
+      "stock": 21
+    },
+    {
+      "label": "XL",
+      "price": 899,
+      "stock": 12
+    },
+    {
+      "label": "XLL",
+      "price": 899,
+      "stock": 12
+    }
+  ],
+  "discountPercent": 12,
+  "images": [
+    "/uploads/products/p_1757071779112_dk8fifvw9b.webp",
+    "/uploads/products/p_1757071779112_uc138zqkmnn.webp",
+    "/uploads/products/p_1757071779114_j1qo7dnscr.webp",
+    "/uploads/products/p_1757071779116_6925h1wu5v4.webp"
+  ],
+  "visible": true,
+  "reviews": [],
+  "createdAt": {
+    "$date": "2025-09-05T11:29:39.121Z"
+  },
+  "updatedAt": {
+    "$date": "2025-09-05T11:29:39.121Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68baca51d7b1198fb88dd954"
+  },
+  "title": "Neck Wrap Front Lantern Sleeve Top",
+  "details": "Neck Wrap Front Lantern Sleeve Top",
+  "categories": [
+    "Top"
+  ],
+  "sizes": [
+    {
+      "label": "M",
+      "price": 499,
+      "stock": 12
+    },
+    {
+      "label": "L",
+      "price": 499,
+      "stock": 23
+    },
+    {
+      "label": "XL",
+      "price": 549,
+      "stock": 2
+    },
+    {
+      "label": "XLL",
+      "price": 549,
+      "stock": 10
+    }
+  ],
+  "discountPercent": 13,
+  "images": [
+    "/uploads/products/p_1757071953269_1vdh7o17du3.webp",
+    "/uploads/products/p_1757071953269_s4xqf5n2z3.webp",
+    "/uploads/products/p_1757071953269_3szw0xpl69s.webp"
+  ],
+  "visible": true,
+  "reviews": [
+    {
+      "user": "a",
+      "rating": 5,
+      "comment": "mast",
+      "images": [
+        "/uploads/reviews/r_1757072046499_9iuzvry7xbi.webp",
+        "/uploads/reviews/r_1757072046500_h4i2du5a3oq.webp"
+      ],
+      "_id": {
+        "$oid": "68bacaaed7b1198fb88dd95b"
+      },
+      "date": {
+        "$date": "2025-09-05T11:34:06.509Z"
+      }
+    }
+  ],
+  "createdAt": {
+    "$date": "2025-09-05T11:32:33.276Z"
+  },
+  "updatedAt": {
+    "$date": "2025-09-05T11:34:06.512Z"
+  },
+  "__v": 1
+},
+{
+  "_id": {
+    "$oid": "68bacb85d7b1198fb88dd960"
+  },
+  "title": "HERE&NOW Tartan Checks Spread Collar Long Sleeve Slim Fit Casual Shirt",
+  "details": "HERE&NOW Tartan Checks Spread Collar Long Sleeve Slim Fit Casual Shirt",
+  "categories": [
+    "Shirt"
+  ],
+  "sizes": [
+    {
+      "label": "M",
+      "price": 499,
+      "stock": 12
+    },
+    {
+      "label": "L",
+      "price": 499,
+      "stock": 12
+    },
+    {
+      "label": "XL",
+      "price": 549,
+      "stock": 12
+    },
+    {
+      "label": "XLL",
+      "price": 599,
+      "stock": 12
+    }
+  ],
+  "discountPercent": 16,
+  "images": [
+    "/uploads/products/p_1757072261483_4z8xmqqoljb.webp",
+    "/uploads/products/p_1757072261484_1p3a5zr72ek.webp",
+    "/uploads/products/p_1757072261484_bb9h09hourv.webp",
+    "/uploads/products/p_1757072261484_lmqs9lnmlf9.webp",
+    "/uploads/products/p_1757072261484_c9tnclv6xws.webp",
+    "/uploads/products/p_1757072261484_ub823bunc4g.webp"
+  ],
+  "visible": true,
+  "reviews": [],
+  "createdAt": {
+    "$date": "2025-09-05T11:37:41.495Z"
+  },
+  "updatedAt": {
+    "$date": "2025-09-05T11:37:41.495Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68bacbf5d7b1198fb88dd966"
+  },
+  "title": "Beyoung Dark Grey Loose-fit Pyjama Pants",
+  "details": "Beyoung Dark Grey Loose-fit Pyjama Pants",
+  "categories": [
+    "NightPant",
+    "Sports"
+  ],
+  "sizes": [
+    {
+      "label": "M",
+      "price": 899,
+      "stock": 0
+    },
+    {
+      "label": "L",
+      "price": 899,
+      "stock": 0
+    },
+    {
+      "label": "XL",
+      "price": 989,
+      "stock": 0
+    },
+    {
+      "label": "XLL",
+      "price": 999,
+      "stock": 0
+    }
+  ],
+  "discountPercent": 10,
+  "images": [
+    "/uploads/products/p_1757072373622_34q1hl6xsen.webp"
+  ],
+  "visible": true,
+  "reviews": [],
+  "createdAt": {
+    "$date": "2025-09-05T11:39:33.628Z"
+  },
+  "updatedAt": {
+    "$date": "2025-09-05T11:41:14.050Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68bacd00d7b1198fb88dd97a"
+  },
+  "title": "H&M Boys Cotton Shirt",
+  "details": "H&M Boys Cotton Shirt",
+  "categories": [
+    "Children"
+  ],
+  "sizes": [
+    {
+      "label": "M",
+      "price": 1299,
+      "stock": 0
+    },
+    {
+      "label": "L",
+      "price": 1299,
+      "stock": 0
+    },
+    {
+      "label": "XL",
+      "price": 1299,
+      "stock": 0
+    }
+  ],
+  "discountPercent": 18,
+  "images": [
+    "/uploads/products/p_1757072640271_rt9dz2xpe8i.webp",
+    "/uploads/products/p_1757072640271_akbuggb7p9s.webp",
+    "/uploads/products/p_1757072640271_p6bg1ejhwgc.webp",
+    "/uploads/products/p_1757072640271_j1sh50zhrw.webp",
+    "/uploads/products/p_1757072640271_1zokmjd0bom.webp",
+    "/uploads/products/p_1757072640271_iza8l6ml63.webp"
+  ],
+  "visible": true,
+  "reviews": [],
+  "createdAt": {
+    "$date": "2025-09-05T11:44:00.278Z"
+  },
+  "updatedAt": {
+    "$date": "2025-09-05T11:44:00.278Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68bace0ed7b1198fb88dd983"
+  },
+  "title": "Fixit Men's Single Layered Pocket Dhoti",
+  "details": "Fixit Men's Single Layered Pocket Dhoti",
+  "categories": [
+    "OldMen"
+  ],
+  "sizes": [
+    {
+      "label": "L",
+      "price": 720,
+      "stock": 12
+    },
+    {
+      "label": "XL",
+      "price": 849,
+      "stock": 11
+    }
+  ],
+  "discountPercent": 11,
+  "images": [
+    "/uploads/products/p_1757072910140_l1zd6qtziy.webp"
+  ],
+  "visible": true,
+  "reviews": [],
+  "createdAt": {
+    "$date": "2025-09-05T11:48:30.143Z"
+  },
+  "updatedAt": {
+    "$date": "2025-09-05T11:48:40.759Z"
+  },
+  "__v": 0
+}]
