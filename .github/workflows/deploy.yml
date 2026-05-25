@@ -28,26 +28,35 @@ jobs:
           npm run build  # Generates the 'dist' or 'build' folder
 
       # 4. Copy project files to EC2 via SCP
-      - name: Copy files to EC2
+      - name: Copy files to EC2 via SCP
         uses: appleboy/scp-action@master
         with:
           host: ${{ secrets.EC2_HOST }}
           username: ${{ secrets.EC2_USERNAME }}
           key: ${{ secrets.EC2_SSH_KEY }}
+          port: 22
           source: "."
           target: "/var/www/my-app"
+        env:
+          # This forces GitHub to pass the secrets into the action runner environment
+          HOST: ${{ secrets.EC2_HOST }}
+          USERNAME: ${{ secrets.EC2_USERNAME }}
+          KEY: ${{ secrets.EC2_SSH_KEY }}
 
       # 5. Connect via SSH to set up backend and restart services
-      - name: SSH and Restart Services
+      - name: SSH into EC2 and Restart Services
         uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.EC2_HOST }}
           username: ${{ secrets.EC2_USERNAME }}
           key: ${{ secrets.EC2_SSH_KEY }}
+          port: 22
           script: |
-            cd /var/www/my-app/server
+            cd /var/www/my-app/backend
             npm ci --production
-            
-            # Start or restart Node application with PM2
             pm2 describe app > /dev/null && pm2 restart app || pm2 start server.js --name "app"
             pm2 save
+        env:
+          HOST: ${{ secrets.EC2_HOST }}
+          USERNAME: ${{ secrets.EC2_USERNAME }}
+          KEY: ${{ secrets.EC2_SSH_KEY }}
