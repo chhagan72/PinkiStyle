@@ -146,7 +146,7 @@ export default function OrderDetails() {
 
   const isPaid = order.status === "paid";
   const isCancelled = order.status === "cancelled";
-  const isCOD = order.paymentMethod === "COD";
+  // const isCOD = order.paymentMethod === "COD";
 
   return (
     <div className="container my-5">
