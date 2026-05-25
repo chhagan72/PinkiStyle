@@ -43,7 +43,7 @@ jobs:
           USERNAME: ${{ secrets.EC2_USERNAME }}
           KEY: ${{ secrets.EC2_SSH_KEY }}
 
-      # 5. Connect via SSH to set up backend and restart services
+      # 5. Connect via SSH and Restart Services
       - name: SSH into EC2 and Restart Services
         uses: appleboy/ssh-action@master
         with:
@@ -52,11 +52,22 @@ jobs:
           key: ${{ secrets.EC2_SSH_KEY }}
           port: 22
           script: |
+            # 1. Force navigate to the exact absolute path of your backend
             cd /var/www/my-app/backend
-            npm ci --production
-            pm2 describe app > /dev/null && pm2 restart app || pm2 start server.js --name "app"
+            
+            # 2. Install production dependencies safely
+            # (Uses npm install if package-lock.json is missing to prevent errors)
+            if [ -f package-lock.json ]; then
+              npm ci --production
+            else
+              npm install --production
+            fi
+            
+            # 3. Tell PM2 to stop and delete the old app instance if it exists
+            pm2 delete app || true
+            
+            # 4. Start the server using its absolute path so PM2 never loses it
+            pm2 start /var/www/my-app/server/server.js --name "app"
+            
+            # 5. Save the PM2 list so it persists across EC2 reboots
             pm2 save
-        env:
-          HOST: ${{ secrets.EC2_HOST }}
-          USERNAME: ${{ secrets.EC2_USERNAME }}
-          KEY: ${{ secrets.EC2_SSH_KEY }}
