@@ -1,0 +1,53 @@
+name: PinkiStyle
+
+on:
+  push:
+    branches:
+      - main  # Trigger workflow when pushing to main branch
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Checkout repository code
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      # 2. Setup Node.js environment
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      # 3. Build React Frontend
+      - name: Build Frontend
+        run: |
+          cd frontend
+          npm ci
+          npm run build  # Generates the 'dist' or 'build' folder
+
+      # 4. Copy project files to EC2 via SCP
+      - name: Copy files to EC2
+        uses: appleboy/scp-action@master
+        with:
+          host: ${{ secrets.EC2_HOST }}
+          username: ${{ secrets.EC2_USERNAME }}
+          key: ${{ secrets.EC2_SSH_KEY }}
+          source: "."
+          target: "/var/www/my-app"
+
+      # 5. Connect via SSH to set up backend and restart services
+      - name: SSH and Restart Services
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.EC2_HOST }}
+          username: ${{ secrets.EC2_USERNAME }}
+          key: ${{ secrets.EC2_SSH_KEY }}
+          script: |
+            cd /var/www/my-app/backend
+            npm ci --production
+            
+            # Start or restart Node application with PM2
+            pm2 describe app > /dev/null && pm2 restart app || pm2 start server.js --name "app"
+            pm2 save

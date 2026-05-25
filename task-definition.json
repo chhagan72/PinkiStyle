@@ -1,0 +1,44 @@
+{
+  "family": "mern-task-def",
+  "networkMode": "awsvpc",
+  "requiresCompatibilities": [
+    "FARGATE"
+  ],
+  "cpu": "512",
+  "memory": "1024",
+  "executionRoleArn": "arn:aws:iam::<957667616827>:role/ecsTaskExecutionRole",
+  "containerDefinitions": [
+    {
+      "name": "backend-container",
+      "image": "<957667616827>.dkr.ecr.<Global>.amazonaws.com/mern-backend:latest",
+      "essential": true,
+      "portMappings": [
+        {
+          "containerPort": 5000,
+          "hostPort": 5000
+        }
+      ],
+      "environment": [
+        {
+          "name": "MONGO_URI",
+          "value": "mongodb://localhost:27017/"
+        },
+        {
+          "name": "NODE_ENV",
+          "value": "production"
+        }
+      ]
+    },
+    {
+      "name": "frontend-container",
+      "image": "<957667616827>.dkr.ecr.<Global>.amazonaws.com/mern-frontend:latest",
+      "essential": true,
+      "portMappings": [
+        {
+          "containerPort": 80,
+          "hostPort": 80
+        }
+      ]
+    }
+  ]
+}
