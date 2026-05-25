@@ -52,22 +52,17 @@ jobs:
           key: ${{ secrets.EC2_SSH_KEY }}
           port: 22
           script: |
-            # 1. Force navigate to the exact absolute path of your backend
+            # 1. Move completely into the backend directory first
             cd /var/www/my-app/backend
             
-            # 2. Install production dependencies safely
-            # (Uses npm install if package-lock.json is missing to prevent errors)
+            # 2. Run npm install safely inside the backend folder
             if [ -f package-lock.json ]; then
               npm ci --production
             else
               npm install --production
             fi
             
-            # 3. Tell PM2 to stop and delete the old app instance if it exists
+            # 3. Restart the PM2 process using its absolute path
             pm2 delete app || true
-            
-            # 4. Start the server using its absolute path so PM2 never loses it
             pm2 start /var/www/my-app/server/server.js --name "app"
-            
-            # 5. Save the PM2 list so it persists across EC2 reboots
             pm2 save
