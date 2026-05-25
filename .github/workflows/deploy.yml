@@ -23,7 +23,7 @@ jobs:
       # 3. Build React Frontend
       - name: Build Frontend
         run: |
-          cd frontend
+          cd pinkistyle
           npm ci
           npm run build  # Generates the 'dist' or 'build' folder
 
@@ -45,7 +45,7 @@ jobs:
           username: ${{ secrets.EC2_USERNAME }}
           key: ${{ secrets.EC2_SSH_KEY }}
           script: |
-            cd /var/www/my-app/backend
+            cd /var/www/my-app/server
             npm ci --production
             
             # Start or restart Node application with PM2
