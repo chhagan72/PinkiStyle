@@ -27,7 +27,7 @@ jobs:
           npm ci
           npm run build   # This creates the 'dist' or 'build' folder inside pinkistyle/
 
-      # 4. Copy all project files to EC2 via SCP
+      # 4. Copy project files to EC2 via SCP
       - name: Copy files to EC2 via SCP
         uses: appleboy/scp-action@master
         with:
@@ -38,6 +38,7 @@ jobs:
           timeout: 60s
           source: ".,!node_modules"
           target: "/var/www/my-app"
+          rm: false # Prevents the plugin from trying to delete root folders it doesn't own
 
       # 5. Connect via SSH and Restart Server Process
       - name: SSH into EC2 and Restart Services
@@ -49,21 +50,21 @@ jobs:
           port: 22
           timeout: 60s
           script: |
-            # 1. Safely remove the temporary archive file if it is lingering in the user folder
-            rm -f ~/vnkOQSErpR.tar.gz || true
-            rm -f /var/www/my-app/vnkOQSErpR.tar.gz || true
+            # Remove any stuck temporary archive files safely
+            rm -f /var/www/my-app/*.tar.gz || true
+            rm -f ~/*.tar.gz || true
             
-            # 2. Navigate explicitly to your server folder
+            # Navigate to the backend server directory
             cd /var/www/my-app/server
             
-            # 3. Install backend production dependencies cleanly
+            # Install production packages
             if [ -f package-lock.json ]; then
               npm ci --production
             else
               npm install --production
             fi
             
-            # 4. Restart the background application via PM2
+            # Reset and start your app inside PM2
             pm2 delete app || true
             pm2 start /var/www/my-app/server/server.js --name "app"
             pm2 save
