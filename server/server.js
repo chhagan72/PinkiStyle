@@ -12,7 +12,7 @@ const ADMIN_MOBILES = ['7232083504'];
 
 const app = express();
 const PORT = process.env.PORT || 5000;
-
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 // Upload dirs
 const UPLOAD_BASE = path.join(__dirname, 'uploads');
 const AVATAR_DIR = path.join(UPLOAD_BASE, 'avatars');

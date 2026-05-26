@@ -53,7 +53,7 @@ jobs:
           port: 22
           script: |
             # 1. Move completely into the backend directory first
-            cd /var/www/my-app/backend
+            cd /var/www/my-app/server
             
             # 2. Run npm install safely inside the backend folder
             if [ -f package-lock.json ]; then
