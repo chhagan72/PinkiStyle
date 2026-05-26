@@ -49,17 +49,21 @@ jobs:
           port: 22
           timeout: 60s
           script: |
-            # Navigate explicitly to your server folder on the EC2 instance
+            # 1. Safely remove the temporary archive file if it is lingering in the user folder
+            rm -f ~/vnkOQSErpR.tar.gz || true
+            rm -f /var/www/my-app/vnkOQSErpR.tar.gz || true
+            
+            # 2. Navigate explicitly to your server folder
             cd /var/www/my-app/server
             
-            # Install backend production dependencies cleanly
+            # 3. Install backend production dependencies cleanly
             if [ -f package-lock.json ]; then
               npm ci --production
             else
               npm install --production
             fi
             
-            # Restart the background application via PM2
+            # 4. Restart the background application via PM2
             pm2 delete app || true
             pm2 start /var/www/my-app/server/server.js --name "app"
             pm2 save
