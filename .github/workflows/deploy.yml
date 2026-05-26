@@ -1,33 +1,33 @@
-name: PinkiStyle
+name: Deploy Fullstack App to AWS EC2
 
 on:
   push:
     branches:
-      - main  # Trigger workflow when pushing to main branch
+      - main
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
-      # 1. Checkout repository code
+      # 1. Pull code from repository
       - name: Checkout Code
         uses: actions/checkout@v4
 
-      # 2. Setup Node.js environment
+      # 2. Setup Node.js on Runner
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'
 
-      # 3. Build React Frontend
+      # 3. Build the React Frontend (Navigating into the nested pinkistyle folder)
       - name: Build Frontend
         run: |
           cd pinkistyle
           npm ci
-          npm run build  # Generates the 'dist' or 'build' folder
+          npm run build   # This creates the 'dist' or 'build' folder inside pinkistyle/
 
-      # 4. Copy project files to EC2 via SCP
+      # 4. Copy all project files to EC2 via SCP
       - name: Copy files to EC2 via SCP
         uses: appleboy/scp-action@master
         with:
@@ -35,15 +35,11 @@ jobs:
           username: ${{ secrets.EC2_USERNAME }}
           key: ${{ secrets.EC2_SSH_KEY }}
           port: 22
-          source: "."
+          timeout: 60s
+          source: ".,!node_modules"
           target: "/var/www/my-app"
-        env:
-          # This forces GitHub to pass the secrets into the action runner environment
-          HOST: ${{ secrets.EC2_HOST }}
-          USERNAME: ${{ secrets.EC2_USERNAME }}
-          KEY: ${{ secrets.EC2_SSH_KEY }}
 
-      # 5. Connect via SSH and Restart Services
+      # 5. Connect via SSH and Restart Server Process
       - name: SSH into EC2 and Restart Services
         uses: appleboy/ssh-action@master
         with:
@@ -51,18 +47,19 @@ jobs:
           username: ${{ secrets.EC2_USERNAME }}
           key: ${{ secrets.EC2_SSH_KEY }}
           port: 22
+          timeout: 60s
           script: |
-            # 1. Move completely into the backend directory first
+            # Navigate explicitly to your server folder on the EC2 instance
             cd /var/www/my-app/server
             
-            # 2. Run npm install safely inside the backend folder
+            # Install backend production dependencies cleanly
             if [ -f package-lock.json ]; then
               npm ci --production
             else
               npm install --production
             fi
             
-            # 3. Restart the PM2 process using its absolute path
+            # Restart the background application via PM2
             pm2 delete app || true
             pm2 start /var/www/my-app/server/server.js --name "app"
             pm2 save
